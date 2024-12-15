@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration Form</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+        }
+
+        form {
+            background-color: #000;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(255, 255, 255, 0.1);
+            max-width: 400px;
+            width: 100%;
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #fff;
+            width: 100%;
+        }
+
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="file"],
+        input[type="submit"] {
+            width: 90%;
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: #000;
+            color: #fff;
+        }
+
+        input[type="submit"] {
+            background-color: #000;
+            border: 1px solid red;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #333;
+        }
+
+        h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+
+        .form-container {
+            width: 100%;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .email-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            justify-content: center;
+            width: 90%;
+        }
+
+        .get-otp {
+            background-color: #000;
+            color: #fff;
+            border: 1px solid #fff;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .get-otp:hover {
+            background-color: #333;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="form-container">
+        <h1>Register</h1>
+        <form id="registration-form" action="http://localhost:3007/register" method="post" enctype="multipart/form-data">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" placeholder="Enter your name" required>
+
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+
+            <label for="confirm-password">Confirm Password</label>
+            <input type="password" id="confirm-password" name="confirm-password" placeholder="Confirm your password" required>
+
+            <label for="email">Email</label>
+            <div class="email-option">
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+                <button type="button" id="get-otp" class="get-otp">Get OTP</button>
+            </div>
+
+            <label for="file">Upload File</label>
+            <input type="file" id="file" name="file" required>
+
+            <input type="submit" value="Register">
+        </form>
+    </div>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", () => {
+            const form = document.getElementById("registration-form");
+            const passwordInput = document.getElementById("password");
+            const confirmPasswordInput = document.getElementById("confirm-password");
+            const emailInput = document.getElementById("email");
+            const fileInput = document.getElementById("file");
+            const getOtpButton = document.getElementById("get-otp");
+
+            // Validate Password and Confirm Password Match
+            form.addEventListener("submit", (e) => {
+                if (passwordInput.value !== confirmPasswordInput.value) {
+                    e.preventDefault();
+                    alert("Passwords do not match. Please check again.");
+                    return;
+                }
+
+                if (!emailInput.value.includes("@")) {
+                    e.preventDefault();
+                    alert("Please enter a valid email address.");
+                    return;
+                }
+
+                if (!fileInput.value) {
+                    e.preventDefault();
+                    alert("Please upload a file.");
+                    return;
+                }
+
+                alert("Form submitted successfully!");
+            });
+
+            // OTP Button Click Event
+            getOtpButton.addEventListener("click", (e) => {
+                e.preventDefault();
+                const email = emailInput.value;
+                if (email) {
+                    alert(`OTP sent to: ${email}`);
+                } else {
+                    alert("Please enter your email first.");
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            color: #fff;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #121212;
+        }
+        .main_div {
+            padding: 30px;
+            background-color: #1e1e1e;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 400px;
+        }
+        h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        input[type="text"],
+        input[type="password"],
+        input[type="email"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 1px solid #fff;
+            border-radius: 4px;
+            font-size: 14px;
+            background-color: #333;
+            color: #fff;
+            box-sizing: border-box;
+        }
+
+        input[type="submit"] {
+            background-color: #000;
+            border: 1px solid red;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        input[type="submit"]:hover {
+            background-color: #444;
+        }
+
+        label {
+            font-size: 16px;
+            margin-bottom: 6px;
+            color: #fff;
+        }
+
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+    </style>
+</head>
+<body>
+    <div class="main_div">
+        <h2>Login</h2>
+        <form  action="http://localhost:3007/login" method="post" enctype="application/x-www-form-urlencoded">
+            <label for="useremail">Email Address</label>
+            <input type="email" id="useremail" name="email" placeholder="Enter your email address" required>
+            
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" placeholder="Enter your password" required>
+            
+            <input type="submit" value="Login">
+        </form>
+    </div>
+    <script>
+     
+    </script>
+</body>
+</html>

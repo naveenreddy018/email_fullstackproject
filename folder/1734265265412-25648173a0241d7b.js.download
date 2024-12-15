@@ -1,0 +1,8 @@
+(self["webpackChunk_canva_web"] = self["webpackChunk_canva_web"] || []).push([[55214],{
+
+/***/ 41412:
+function(_, __, __webpack_require__) {__webpack_require__.n_x = __webpack_require__.n;const __web_req__ = __webpack_require__;__web_req__(813110);__web_req__(427967);__web_req__(171210);__web_req__(907958);self._fd1e22c0e0516062f8631db29060abc8 = self._fd1e22c0e0516062f8631db29060abc8 || {};(function(__c) {var g7h=__webpack_require__(443763).jsx;var h7h=__webpack_require__(875604).memo;__c.kSa={mNd:function({Ny:a,G:b,zi:c,xd:d,na:e,bz:f,jb:g,Bg:h,HEa:k,bF:m,wK:n,Link:p,$p:r,Rm:v,wm:w}){({Sm:w}=w(__c.cN));const {Ejb:x}=__c.Lwf({Ny:a,G:b,xd:d,na:e,bz:f,jb:g,Bg:h,bF:m,wK:n,Link:p,$p:r,Sm:w,Rm:v});a=h7h(({model:z})=>{const {Hoa:B,Ioa:C}=__c.dUe();null===k||void 0===k?void 0:k();return g7h(x,{...z,breadcrumbs:z.$t,Hoa:B,Ioa:C})});return{mwd:__c.ou("TEMPLATES_CATEGORY",b,c)(a)}}};
+}).call(self, self._fd1e22c0e0516062f8631db29060abc8);}
+
+}])
+//# sourceMappingURL=sourcemaps/25648173a0241d7b.js.map
